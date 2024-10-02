@@ -53,3 +53,45 @@ const worksContainer = document.querySelector('.gallery')
     `;
     worksContainer.appendChild(workElement);
 });
+
+// Fonction pour récupérer les données du commentaire HTML
+function extractData() {
+    // Sélectionner le nœud contenant le commentaire
+    const commentNodes = Array.from(document.childNodes).filter(node => node.nodeType === Node.COMMENT_NODE);
+
+    // Si le commentaire est trouvé, on extrait son contenu
+    if (commentNodes.length > 0) {
+        const commentContent = commentNodes[0].textContent;
+
+        // Créer un élément temporaire pour traiter le contenu HTML
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = commentContent;
+
+        // Sélectionner toutes les balises figure
+        const figures = tempDiv.querySelectorAll('figure');
+        const data = [];
+
+        // Parcourir chaque figure et extraire les informations des balises img et figcaption
+        figures.forEach(figure => {
+            const img = figure.querySelector('img');
+            const caption = figure.querySelector('figcaption');
+            
+            if (img && caption) {
+                data.push({
+                    imageSrc: img.getAttribute('src'),
+                    altText: img.getAttribute('alt'),
+                    caption: caption.textContent.trim()
+                });
+            }
+        });
+
+        return data;
+    }
+    
+    return [];
+}
+
+// Appel de la fonction et affichage des données sous forme de tableau
+const extractedData = extractDataFromComment();
+console.table(extractedData);
+
