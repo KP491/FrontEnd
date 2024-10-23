@@ -67,7 +67,7 @@ const displayWorks = (id) => {
 });
 }
 
-// recupertaion des categiries et affichage dynamiques des boutons
+// recupération des categories et affichage dynamiques des boutons
 
 const getCategory = async () => {
     const response = await fetch('http://localhost:5678/api/categories'); 
@@ -99,13 +99,21 @@ const displayFiltres = () => {
     const btnFiltre = document.createElement('button');
 
     btnFiltre.innerText = cat.name;
-    btnFiltre.classList.add("btnFiltre");
+     // Ajout de la classe CSS "btnFiltre" à chaque bouton de catégorie
+     btnFiltre.classList.add("btnFiltre");
 
-    btnFiltre.addEventListener('click', () => {
-        displayWorks(cat.id)
-    })
+     // Ajout d'une autre classe conditionnelle si nécessaire
+     // Par exemple, si tu veux que les boutons soient différents en fonction de la catégorie
+     if (cat.name === "Spécial") {
+         btnFiltre.classList.add("btnSpecial");
+     }
 
-    worksContainer.appendChild(btnFiltre);
-        
+     // Gestion du clic pour chaque bouton de catégorie
+     btnFiltre.addEventListener('click', () => {
+         displayWorks(cat.id);
+     });
+
+     // Ajout du bouton dans le conteneur
+     worksContainer.appendChild(btnFiltre);
 });
 }
