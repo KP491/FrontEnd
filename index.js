@@ -1,3 +1,4 @@
+//Initialisation des variables
 let works = [];
 let categories = [];
 
@@ -10,7 +11,7 @@ const isLogin = () => {
 
     return sessionStorage.getItem("token") ? true : false
 } 
-
+//Vérification de la connexion utilisateur
 if(isLogin()) {    
     // si on est connecté
     worksContainer.style.display = "none"
@@ -18,7 +19,7 @@ if(isLogin()) {
     BtnLogin.innerHTML="Logout"
 }
 
-
+//Gestion du bouton de connexion/déconnexion
 BtnLogin.addEventListener('click', () => {
 
     if(isLogin()) {    
@@ -33,7 +34,7 @@ BtnLogin.addEventListener('click', () => {
 
 })
 
-
+//Récupération et affichage des travaux (works)
 const getWorks = async () => {
     const response = await fetch('http://localhost:5678/api/works'); 
     works = await response.json();
