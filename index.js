@@ -41,7 +41,7 @@ const getWorks = async () => {
 
      console.log(works)
     displayWorks(0);
-
+    displayModalGallery();   
 }
 
 getWorks()
@@ -118,3 +118,18 @@ const displayFiltres = () => {
      worksContainer.appendChild(btnFiltre);
 });
 }
+//fonctions de la modale pour la gestion des images
+const createWork = async (RécupérationDuFormulaire) => {
+    const req = await fetch('http://localhost:5678/api/works', {
+      method: "POST",
+      body: DonnéesDuFormulaire ('http://localhost:5678/api/works'
+    });
+    const res = await req.json();
+  }
+
+  const deleteWork = async (id) => {
+    const req = await fetch(`http://localhost:5678/api/works/${id}`, { //chemin suppression des photos
+      method: "DELETE"
+    });
+    const res = await req.json();
+  }
