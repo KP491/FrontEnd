@@ -31,6 +31,13 @@ const displayModalGallery = () => {
         i.classList.add('fa');
         i.classList.add('fa-trash');
 
+        i.addEventListener('click', () => {
+            if (confirm("Etes vous sûr de vouloir supprimer cette Photo!") == true) {
+                deleteWork(work.id)
+              }
+            
+        })
+
        
         card.appendChild(img);
         card.appendChild(i); 
@@ -39,3 +46,28 @@ const displayModalGallery = () => {
     
 });
 }
+
+
+
+
+  const deleteWork = async (id) => {
+    const res = await fetch(`http://localhost:5678/api/works/${id}`, { //chemin suppression des photos
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + sessionStorage.getItem('token'),
+      },
+    });
+    
+   if (res.status === 204){
+    
+   }
+   getWorks();
+  }
+
+//   let form = document.createElement('form');
+//   form.action = "http://localhost:5678/api/works";
+//   form.method = "POST";
+
+//   getWorks();
+//   getCategory();
+  

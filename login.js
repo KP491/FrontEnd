@@ -4,7 +4,7 @@ const password = document.getElementById("password");
 
 FormLogin.addEventListener('submit', (event) => {
 
-        event.preventDefault(); // désactive le comportement poar defaut submit
+        event.preventDefault(); // désactive le comportement par defaut submit
 
         const data = {
             "email": email.value,
@@ -21,6 +21,6 @@ FormLogin.addEventListener('submit', (event) => {
           .then((response) => {
             // console.log(response)
             sessionStorage.setItem("token", response.token);
-            window.location.replace = ("index.html");
+            window.location.href ='index.html';
           }) 
 })
