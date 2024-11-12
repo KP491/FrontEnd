@@ -1,22 +1,135 @@
-.filters{
-	display: flex;
-	justify-content: center;
-	margin: 40px 0;
+header {
+    display: block; /* Compatibilité pour anciens navigateurs */
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
-.filter__btn, .btn-admin{
+
+/* Style spécifique au header */
+header {
+    display: flex; /* Conteneur flex pour agencer le contenu */
+    justify-content: space-between; /* Espace entre les éléments enfants */
+    margin: 50px 0; /* Marge verticale autour du header */
+}
+
+/* Style pour h1 à l'intérieur du header */
+header h1 {
+    display: flex;
+    flex-direction: column; /* Aligne les enfants (le texte et le <span>) en colonne */
+    font-family: 'Syne';
+    font-size: 22px;
+    font-weight: 800;
+    color: #B1663C;
+}
+
+/* Style pour le <span> dans h1 */
+header h1 > span {
+    font-family: 'Work Sans';
+    font-size: 10px;
+    letter-spacing: 0.1em;
+}
+
+/* Style pour le <nav> dans le header */
+header nav ul {
+    display: flex; /* Aligne les éléments <li> horizontalement */
+    align-items: center; /* Aligne verticalement les éléments au centre */
+    list-style-type: none; /* Supprime les puces des <li> */
+    margin: 0; /* Assure qu'il n'y a pas de marge */
+    padding: 0; /* Assure qu'il n'y a pas de padding */
+}
+
+/* Style pour chaque <li> dans le <nav> */
+header nav li {
+    padding: 0 10px; /* Espace horizontal autour de chaque élément <li> */
+    font-size: 1.2em;
+}
+
+/* Effet hover sur les éléments <li> */
+header nav li:hover {
+    color: #B1663C; /* Change la couleur au survol */
+}
+
+#introduction {
+    display: flex;
+    align-items: center;
+}
+
+#introduction figure, #introduction article {
+    flex: 1;
+}
+
+#introduction img {
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+#introduction h2 {
+    margin-bottom: 1em;
 	font-family: 'Syne';
-	padding: 10px 20px;
-	margin: 0 15px;
-	border: 1px solid #1D6154;
-	border-radius: 25px;
-	color: #1D6154;
-	background-color: white;
-	font-size: 16px;
 	font-weight: 700;
-	cursor: pointer;
-	transition: all 0.5s ease;
+	font-size: 30px;
+	color: #1D6154
 }
-.filter__btn--active, .btn-admin{
+
+#introduction p {
+    margin-bottom: 0.5em;
+}
+
+.gallery {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+}
+
+.gallery img {
+	width: 100%;
+}
+
+#contact {
+	width: 50%;
+margin: auto;
+}
+#contact > * {
+	text-align: center;
+
+}
+#contact h2{
+	margin-bottom: 20px;
+}
+#contact form {
+	text-align: left;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+}
+
+#contact input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#contact label {
+	margin: 2em 0 1em 0;
+}
+#contact textarea {
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+input[type="submit"]{
+	font-family: 'Syne';
+	font-weight: 700;
 	color: white;
 	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
 }

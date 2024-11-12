@@ -104,7 +104,7 @@ const displayFiltres = () => {
      btnFiltre.classList.add("btnFiltre");
 
      // Ajout d'une autre classe conditionnelle si nécessaire
-     // Par exemple, si tu veux que les boutons soient différents en fonction de la catégorie
+     // Par exemple, si l'on veux que les boutons soient différents en fonction de la catégorie
      if (cat.name === "Spécial") {
          btnFiltre.classList.add("btnSpecial");
      }
