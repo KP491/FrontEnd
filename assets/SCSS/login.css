@@ -1,12 +1,52 @@
-.login{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 80vh;
-
+header {
+    display: block; /* Compatibilité pour anciens navigateurs */
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
 }
-.login a{
-	text-decoration: underline;
-	margin-bottom: 100px;
+
+/* Style spécifique au header */
+header {
+    display: flex; /* Conteneur flex pour agencer le contenu */
+    justify-content: space-between; /* Espace entre les éléments enfants */
+    margin: 50px 0; /* Marge verticale autour du header */
+}
+
+/* Style pour h1 à l'intérieur du header */
+header h1 {
+    display: flex;
+    flex-direction: column; /* Aligne les enfants (le texte et le <span>) en colonne */
+    font-family: 'Syne';
+    font-size: 22px;
+    font-weight: 800;
+    color: #B1663C;
+}
+
+/* Style pour le <span> dans h1 */
+header h1 > span {
+    font-family: 'Work Sans';
+    font-size: 10px;
+    letter-spacing: 0.1em;
+}
+
+/* Style pour le <nav> dans le header */
+header nav ul {
+    display: flex; /* Aligne les éléments <li> horizontalement */
+    align-items: center; /* Aligne verticalement les éléments au centre */
+    list-style-type: none; /* Supprime les puces des <li> */
+    margin: 0; /* Assure qu'il n'y a pas de marge */
+    padding: 0; /* Assure qu'il n'y a pas de padding */
+}
+
+/* Style pour chaque <li> dans le <nav> */
+header nav li {
+    padding: 0 10px; /* Espace horizontal autour de chaque élément <li> */
+    font-size: 1.2em;
+}
+
+/* Effet hover sur les éléments <li> */
+header nav li:hover {
+    color: #B1663C; /* Change la couleur au survol */
 }
